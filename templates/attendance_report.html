@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <title>Attendance Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Attendance Report</h2>
+
+    {% if records %}
+        <table border="1" cellpadding="8">
+            <tr>
+                <th>Attendance ID</th>
+                <th>Matric No</th>
+                <th>Student Name</th>
+                <th>Course Code</th>
+                <th>Course Title</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+            </tr>
+
+            {% for row in records %}
+            <tr>
+                <td>{{ row.attendance_id }}</td>
+                <td>{{ row.matric_no }}</td>
+                <td>{{ row.first_name }} {{ row.last_name }}</td>
+                <td>{{ row.course_code }}</td>
+                <td>{{ row.course_title }}</td>
+                <td>{{ row.attendance_date }}</td>
+                <td>{{ row.attendance_time }}</td>
+                <td>{{ row.status }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No attendance records found.</p>
+    {% endif %}
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+
+venv/
+.env
+
+dataset/
+trainer/
+
+.DS_Store
+Thumbs.db

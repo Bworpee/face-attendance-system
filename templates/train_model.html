@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <title>Train Model</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Train Face Recognition Model</h2>
+
+    <p style="text-align:center;">
+        If you just captured a new student's face dataset, click the button below
+        to retrain the model so the system can recognize the new student.
+    </p>
+
+    <form method="post">
+        <button type="submit">Train Model</button>
+    </form>
+
+    <p style="text-align:center;"><a href="/">Back to Home</a></p>
+</div>
+
+</body>
+</html>

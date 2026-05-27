@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>Add Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Add Student</h2>
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div style="width: 50%; margin: 20px auto;">
+                {% for category, message in messages %}
+                    <div style="
+                        padding: 10px;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+                        color: white;
+                        background-color: {% if category == 'success' %}#28a745{% else %}#dc3545{% endif %};
+                    ">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form method="post">
+        <label>Matric No:</label><br>
+        <input type="text" name="matric_no" required><br><br>
+
+        <label>First Name:</label><br>
+        <input type="text" name="first_name" required><br><br>
+
+        <label>Last Name:</label><br>
+        <input type="text" name="last_name" required><br><br>
+
+        <label>Department:</label><br>
+        <input type="text" name="department" required><br><br>
+
+        <label>Level:</label><br>
+        <input type="text" name="level" required><br><br>
+
+        <label>Face Label (example: 1, 2, 3):</label><br>
+        <input type="number" name="model_label" required><br><br>
+
+        <button type="submit">Save Student</button>
+    </form>
+
+    <p style="text-align:center;"><a href="/">Back to Home</a></p>
+</div>
+
+</body>
+</html>

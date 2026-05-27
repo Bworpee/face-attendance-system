@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Capture Dataset</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Capture Student Face Dataset</h2>
+
+    <form method="post">
+        <label>Enter Face Label:</label><br>
+        <input type="number" name="model_label" required><br><br>
+
+        <button type="submit">Start Face Capture</button>
+    </form>
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Start Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Start Attendance</h2>
+
+    <form method="post">
+        <label>Enter Course ID:</label><br>
+        <input type="number" name="course_id" required><br><br>
+
+        <button type="submit">Start Attendance</button>
+    </form>
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

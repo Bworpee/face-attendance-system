@@ -1,13 +1,13 @@
 import os
 import mysql.connector
 
-# Railway automatically provides these environment variables
+# Railway MySQL connection settings
 DB_CONFIG = {
-    "host": os.getenv("mysql.railway.internal"),
-    "user": os.getenv("root"),
+    "host": os.getenv("MYSQLHOST"),
+    "user": os.getenv("MYSQLUSER"),
     "password": os.getenv("MYSQLPASSWORD"),
-    "database": os.getenv("MYSQLDkbyVstDBUxLWQhitTfFcBKkfizmfgnARATABASE"),
-    "port": int(os.getenv("3306"))
+    "database": os.getenv("MYSQLDATABASE"),
+    "port": int(os.getenv("MYSQLPORT"))
 }
 
 

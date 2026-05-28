@@ -1,31 +1,18 @@
-# db.py
-
-"""
-This file is responsible for connecting Python to the MySQL database.
-
-Whenever we want to:
-- save a student
-- read courses
-- store attendance
-- get reports
-
-we will use this connection.
-"""
-
+import os
 import mysql.connector
 
-# This dictionary contains your database connection settings
+# Railway automatically provides these environment variables
 DB_CONFIG = {
-    "host": "localhost",              # MySQL is running on your computer
-    "user": "root",                   # your MySQL username (usually root)
-    "password": "engineering",        # replace this with your real MySQL password
-    "database": "face_attendance_db"  # the database we created in Step 4
+    "host": os.getenv("mysql.railway.internal"),
+    "user": os.getenv("root"),
+    "password": os.getenv("MYSQLPASSWORD"),
+    "database": os.getenv("MYSQLDkbyVstDBUxLWQhitTfFcBKkfizmfgnARATABASE"),
+    "port": int(os.getenv("3306"))
 }
+
 
 def get_conn():
     """
-    This function creates and returns a connection to the MySQL database.
-    
-    We will call this function anytime we want to interact with the database.
+    Creates and returns a MySQL database connection.
     """
     return mysql.connector.connect(**DB_CONFIG)
